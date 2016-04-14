@@ -1,8 +1,8 @@
 package io.dropwizard.elasticsearch.health;
 
 import com.codahale.metrics.health.HealthCheck;
-import org.elasticsearch.action.admin.cluster.health.ClusterHealthStatus;
 import org.elasticsearch.client.Client;
+import org.elasticsearch.cluster.health.ClusterHealthStatus;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -48,7 +48,6 @@ public class EsClusterHealthCheck extends HealthCheck {
     @Override
     protected Result check() throws Exception {
         final ClusterHealthStatus status = client.admin().cluster().prepareHealth().get().getStatus();
-
         if (status == ClusterHealthStatus.RED || (failOnYellow && status == ClusterHealthStatus.YELLOW)) {
             return Result.unhealthy("Last status: %s", status.name());
         } else {

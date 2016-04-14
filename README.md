@@ -11,15 +11,15 @@ The package provides a [lifecycle-managed] [3] client class (`ManagedEsClient`),
 common options (`EsConfiguration`), and some [health checks] [4] which can instantly be used in any Dropwizard application.
 
 [1]: http://www.elasticsearch.org/
-[2]: http://dropwizard.io/0.9.1/docs
-[3]: http://dropwizard.io/0.9.1/docs/manual/core.html#managed-objects
-[4]: http://dropwizard.io/0.9.1/docs/manual/core.html#health-checks
+[2]: http://dropwizard.io/0.9.2/docs
+[3]: http://dropwizard.io/0.9.2/docs/manual/core.html#managed-objects
+[4]: http://dropwizard.io/0.9.2/docs/manual/core.html#health-checks
 
 
 Usage
 -----
 
-Just add `EsConfiguration` to your [Configuration](http://dropwizard.io/0.9.1/docs/manual/core.html#configuration) class and
+Just add `EsConfiguration` to your [Configuration](http://dropwizard.io/0.9.2/docs/manual/core.html#configuration) class and
 create an `ManagedEsClient` instance in the run method of your service.
 
 You can also add one of the existing health checks to your [Environment](http://dropwizard.io/0.9.1/docs/manual/core.html#environments)
@@ -68,9 +68,16 @@ This project is available on Maven Central. To add it to your project simply add
     <dependency>
       <groupId>io.dropwizard.modules</groupId>
       <artifactId>dropwizard-elasticsearch</artifactId>
-      <version>0.9.1-1</version>
+      <version>0.9.2-1</version>
     </dependency>
 
+    <repositories>
+            <repository>
+                <id>clojars</id>
+                <name>Clojars repository</name>
+                <url>https://clojars.org/repo</url>
+            </repository>
+    </repositories>
 
 Support
 -------
